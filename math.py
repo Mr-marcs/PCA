@@ -10,12 +10,12 @@ mean = np.mean(data,axis=0)
 meanReducedData = data - mean
 
 #Matriz de covariância
-covMatrix = np.cov(MeanReducedData.T)
+covMatrix = np.cov(meanReducedData)
 #Calcular autovalores e autovetores
-eigVal,eigVec = np.linalg.eig(CovMatrix)
+eigVal,eigVec = np.linalg.eig(covMatrix)
 #Ordenando os autovalores
 eigVal = np.array(np.sort(eigVal))[::-1]
-print(eigVal)
+
 #Mostrar as duas maiores colunas
 sns.lineplot(x="Pregnancies",y="Glucose",data=data,hue="Outcome")
 plt.show()
